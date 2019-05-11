@@ -1,24 +1,44 @@
-# README
+# Odin Flight Booker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Purpose
 
-Things you may want to cover:
+A rails app for booking flights.
+This is merely a sample app to show how nested attributes would work
+
+[The Odin Project flight
+booker link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms?ref=lnav#assignment)
 
 * Ruby version
 
+Ruby 2.6.2
+
 * System dependencies
 
-* Configuration
+Ruby 2.6.2
+Rails 5.2.3
+Sqlite3
 
 * Database creation
 
+```bash
+rails db:migrate
+```
+
 * Database initialization
 
-* How to run the test suite
+```bash
+rails db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+* How to run the test suite
+```bash
+rails db:migrate
+rails db:seed
+rails test
+```
 
 * Deployment instructions
 
-* ...
+```bash
+git push heroku [branch]
+```
