@@ -6,5 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Airport.create(name: "SFO")
-Airport.create(name: "NYC")
+sfo = Airport.create(name: "SFO")
+nyc = Airport.create(name: "NYC")
+
