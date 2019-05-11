@@ -8,36 +8,36 @@ This is merely a sample app to show how nested attributes would work
 [The Odin Project flight
 booker link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms?ref=lnav#assignment)
 
-* Ruby version
+## Ruby version
 
 - Ruby 2.6.2
 
-* System dependencies
+## System dependencies
 
 - Ruby 2.6.2
 - Rails 5.2.3
 - Sqlite3
 
-* Database creation
+## Database creation
 
 ```bash
 rails db:migrate
 ```
 
-* Database initialization
+## Database initialization
 
 ```bash
 rails db:seed
 ```
 
-* How to run the test suite
+## How to run the test suite
 ```bash
 rails db:migrate
 rails db:seed
 rails test
 ```
 
-* Deployment instructions
+## Deployment instructions
 
 ```bash
 git push heroku [branch]
