@@ -1,9 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  start: 2019-05-10 23:31:29
-  duration: 2019-05-10 23:31:29
+  start: <%= Time.zone.now %>
+  duration: 180
+  to_airport: sfo
+  from_airport: nyc
 
 two:
-  start: 2019-05-10 23:31:29
-  duration: 2019-05-10 23:31:29
+  start: <%= 2.hours.ago %>
+  duration: 150
+  to_airport: nyc
+  from_airport: sfo
+
+three:
+  start: <%= 3.hours.since %>
+  duration: 90
+  to_airport: nyc
+  from_airport: sfo
