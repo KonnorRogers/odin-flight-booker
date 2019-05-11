@@ -27,4 +27,12 @@ class AirportTest < ActiveSupport::TestCase
 
     refute sfo.save
   end
+
+  test 'airport name cannot be greater than 3 in length' do
+    four = Airport.new(name: 'A' * 4)
+    two = Airport.new(name: 'B' * 2)
+
+    refute four.save
+    refute two.save
+  end
 end
