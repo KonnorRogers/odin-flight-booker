@@ -9,3 +9,15 @@
 sfo = Airport.create(name: "SFO")
 nyc = Airport.create(name: "NYC")
 
+Flight.create(start: Time.zone.now, duration: 180,
+              to_airport_id: sfo.id, from_airport_id: nyc.id)
+
+Flight.create(start: 1.hour.since, duration: 80,
+              to_airport_id: sfo.id, from_airport_id: nyc.id)
+
+
+Flight.create(start: 3.hours.since, duration: 90,
+              to_airport_id: nyc.id, from_airport_id: sfo.id)
+
+Flight.create(start: 1.hour.ago, duration: 190,
+              to_airport_id: nyc.id, from_airport_id: sfo.id)

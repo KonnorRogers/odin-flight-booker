@@ -20,11 +20,13 @@ ActiveRecord::Schema.define(version: 2019_05_11_033129) do
 
   create_table "flights", force: :cascade do |t|
     t.datetime "start"
-    t.time "duration"
+    t.integer "duration"
+    t.integer "to_airport_id"
+    t.integer "from_airport_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index [nil], name: "index_flights_on_arriving_airport_id"
-    t.index [nil], name: "index_flights_on_departing_airport_id"
+    t.index ["from_airport_id"], name: "index_flights_on_from_airport_id"
+    t.index ["to_airport_id"], name: "index_flights_on_to_airport_id"
   end
 
 end
