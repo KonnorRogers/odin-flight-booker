@@ -1,4 +1,8 @@
-<%= form_with(url: root_url, method: :get) do |f| %>
-  <p><%= f.text_field :name, value: params[:name] %></p>
-  <p><%= f.submit 'Search', name: nil %></p>
+<%= form_with(model: @flight, method: :get) do |f| %>
+  <p> From: <%= f.select :from_airport, @airport_options %> </p>
+  <p> To: <%= f.select :to_airport, @airport_options %> </p>
+
+  <p> 
+    Passengers: <%= f.select :passengers, options_for_select(%w[1 2 3 4]) %> 
+  </p>
 <% end %>
