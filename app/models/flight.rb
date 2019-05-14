@@ -10,21 +10,31 @@ class Flight < ApplicationRecord
   scope :available, lambda { |to, from, start|
                       Flight.where(["to_airport_id = :to and
                                     from_airport_id = :from and
-                                    start = :start",
+                                    start >= :begin and
+                                    start <= :ending",
                                     { to: to,
                                       from: from,
-                                      start: start }])
+                                      begin: beginning(start),
+                                      ending: ending(start) }])
                     }
 
-  scope :test, ->(start) { Flight.where("start > ?", start) }
-
   scope :dates, -> { Flight.where('start > ?', Time.zone.now) }
+  scope :in_order, -> { Flight.all.order(start: :asc) }
 
-  def self.start_dates
-    Flight.dates
+  def self.date_list
+    dates = Flight.dates.in_order
+    dates.map { |d| [d.start] }.uniq
   end
 
-  def start_dates_formatted
-    start.strftime("%m/%d/%Y  Time: %H:%M")
+  def self.beginning(date)
+    return if date.nil?
+
+    Date.parse(date).beginning_of_day
+  end
+
+  def self.ending(date)
+    return if date.nil?
+
+    Date.parse(date).end_of_day
   end
 end

@@ -1,0 +1,13 @@
+<% if @flights.empty? && !(current_page?(root_url)) %>
+  <p>No flights found, please search again</p>
+<% else %>
+  <% @flights.each do |flight| %>
+    <ul>
+      <li>From: <%= flight.from_airport.name %></li>
+      <li>To: <%= flight.to_airport.name %></li>
+      <li>Date: <%= flight.start.strftime('%m/%d/%Y') %></li>
+      <li>Time: <%= flight.start.strftime('%H%M') %></li>
+      <li>Duration: <%= flight.duration %>minutes</li>
+    </ul>
+  <% end %>
+<% end %>

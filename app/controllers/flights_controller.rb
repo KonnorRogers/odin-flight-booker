@@ -4,10 +4,12 @@ class FlightsController < ApplicationController
   def index
     # Creates an array of arrays for use by options for select
     @airport_options = Airport.all.map { |a| [a.name, a.id] }
+    @passengers = %w[1 2 3 4]
 
-    @dates = Flight.dates.map { |d| [d.start, d.id] }
-    @flights = Flight.available(params[:to_airport], params[:from_airport], params[:start])
-    # @flights = Flight.test(params[:start])
+    @dates = Flight.date_list
+    @flights = Flight.available(params[:to_airport],
+                                params[:from_airport],
+                                params[:start]).in_order
   end
 
   private

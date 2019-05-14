@@ -2,12 +2,4 @@
 <p>Please choose your flight</p>
 <%= render 'search' %>
 
-<% if @flights.empty? %>
-  <p>No flights found, please search again</p>
-<% else %>
-  <ul>
-    <% @flights.each do |flight| %>
-      <li><%= flight.start %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render 'flights' %>

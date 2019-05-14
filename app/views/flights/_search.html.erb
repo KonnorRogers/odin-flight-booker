@@ -8,11 +8,11 @@
   </p>
 
   <p> 
-    Passengers: <%= f.select :passengers, options_for_select(%w[1 2 3 4]), selected: params[:passengers] %> 
+    Passengers: <%= f.select :passengers, options_for_select(@passengers), selected: params[:passengers] %> 
   </p>
 
   <h3> Available dates: </h3>
-  <p><%= f.select :start, options_from_collection_for_select(Flight.start_dates, "start", :start_dates_formatted), prompt: 'Select a date' %></p>
+  <p><%= f.select :start, options_for_select(@dates, params[:start])  %></p>
 
   <p><%= f.submit "Search for flights" %></p>
 <% end %>
