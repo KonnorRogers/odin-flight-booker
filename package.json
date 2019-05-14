@@ -2,7 +2,5 @@
   "name": "odin-flight-booker",
   "private": true,
   "dependencies": {},
-  "devDependencies": {
-    "tailwindcss": "^1.0.1"
-  }
+  "devDependencies": {}
 }
