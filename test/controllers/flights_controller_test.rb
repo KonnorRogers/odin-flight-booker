@@ -5,4 +5,9 @@ class FlightsControllerTest < ActionDispatch::IntegrationTest
     get root_url
     assert_response :success
   end
+
+  test 'should also get index' do
+    get flights_path
+    assert_response :success
+  end
 end
