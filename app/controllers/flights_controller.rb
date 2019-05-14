@@ -7,6 +7,7 @@ class FlightsController < ApplicationController
 
     @dates = Flight.dates.map { |d| [d.start, d.id] }
     @flights = Flight.available(params[:to_airport], params[:from_airport], params[:start])
+    # @flights = Flight.test(params[:start])
   end
 
   private

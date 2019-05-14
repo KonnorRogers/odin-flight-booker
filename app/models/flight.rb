@@ -10,11 +10,13 @@ class Flight < ApplicationRecord
   scope :available, lambda { |to, from, start|
                       Flight.where(["to_airport_id = :to and
                                     from_airport_id = :from and
-                                    start > :now",
+                                    start = :start",
                                     { to: to,
                                       from: from,
-                                      now: start }])
+                                      start: start }])
                     }
+
+  scope :test, ->(start) { Flight.where("start > ?", start) }
 
   scope :dates, -> { Flight.where('start > ?', Time.zone.now) }
 
@@ -23,6 +25,6 @@ class Flight < ApplicationRecord
   end
 
   def start_dates_formatted
-    start.strftime("%m%d%Y")
+    start.strftime("%m/%d/%Y  Time: %H:%M")
   end
 end
