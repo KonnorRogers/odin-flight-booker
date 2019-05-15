@@ -61,7 +61,30 @@
  * @import "utilities/skew-transforms";
  */
 
-
 .form {
-  @apply bg-blue-500 py-2 px-4 rounded text-center;
+  @apply .flex .flex-col;
+}
+
+.label {
+}
+
+.select {
+  @apply m-0;
+}
+
+.box {
+  @apply .shadow .border-green-400 .border-solid;
+}
+
+.btn {
+  @apply .px-4 .py-2 .rounded;
+}
+
+.btn-green {
+  @apply .bg-green-400 .text-white .font-bold .shadow .border-gray-500 .border-solid;
+}
+
+
+.btn-green:hover {
+  @apply .bg-green-500 .border-gray-700;
 }

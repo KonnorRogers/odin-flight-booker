@@ -1,17 +1,17 @@
 <%= form_with(url: flights_path, method: :get, local: true,
              class: 'form') do |f| %>
   
-  <p> <%= f.label :from_airport, "From: " %> </p>
-  <p><%= f.select :from_airport, @airport_options, selected: params[:from_airport] %></p>
+  <%= f.label :from_airport, "From: ", class: "label" %>
+  <%= f.select :from_airport, @airport_options, selected: params[:from_airport], class: "select box" %>
 
-    <p><%= f.label :to_airport, "To: " %></p>
-    <p><%= f.select :to_airport, @airport_options, selected: params[:to_airport] %></p> 
+    <%= f.label :to_airport, "To: ", class: "label" %>
+    <%= f.select :to_airport, @airport_options, selected: params[:to_airport], class: "select box" %> 
 
-    <p><%= f.label :passengers, "Passengers: " %></p>
-    <p><%= f.select :passengers, options_for_select(@passengers), selected: params[:passengers] %></p> 
+    <%= f.label :passengers, "Passengers: ", class: "label" %>
+    <%= f.select :passengers, options_for_select(@passengers), selected: params[:passengers], class: "select box" %>
 
-  <h3> Available dates: </h3>
-  <p><%= f.select :start, options_for_select(@dates, params[:start])  %></p>
+  <h3 class="label"> Available dates: </h3>
+  <%= f.select :start, options_for_select(@dates, params[:start]), class: "select box" %>
 
-  <p><%= f.submit "Search for flights" %></p>
+  <%= f.submit "Search for flights", class: "btn btn-green" %>
 <% end %>

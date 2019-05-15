@@ -1,8 +1,8 @@
 <% if @flights.empty? && !(current_page?(root_url)) %>
-  <p>No flights found, please search again</p>
+  <p class="font-bold text-lg">No flights found, please search again</p>
 <% else %>
   <% @flights.each do |flight| %>
-    <ul>
+    <ul class="list-none list-inside">
       <li>From: <%= flight.from_airport.name %></li>
       <li>To: <%= flight.to_airport.name %></li>
       <li>Date: <%= flight.start.strftime('%m/%d/%Y') %></li>
