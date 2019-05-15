@@ -1,8 +1,11 @@
 {
   "name": "odin-flight-booker",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@rails/webpacker": "3.5"
+  },
   "devDependencies": {
-    "tailwindcss": "^1.0.1"
+    "tailwindcss": "^1.0.1",
+    "webpack-dev-server": "2.11.2"
   }
 }
