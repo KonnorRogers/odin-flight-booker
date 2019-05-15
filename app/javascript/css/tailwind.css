@@ -62,7 +62,7 @@
  */
 
 .form {
-  @apply .flex .flex-col;
+  @apply .flex .flex-col .flex-auto;
 }
 
 .label {
