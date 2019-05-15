@@ -1,15 +1,13 @@
 <%= form_with(url: flights_path, method: :get, local: true) do |f| %>
-  <p> 
-    From: <%= f.select :from_airport, @airport_options, selected: params[:from_airport] %>
-  </p>
+  
+  <p> <%= f.label :from_airport, "From: " %> </p>
+  <p><%= f.select :from_airport, @airport_options, selected: params[:from_airport] %></p>
 
-  <p> 
-    To: <%= f.select :to_airport, @airport_options, selected: params[:to_airport] %> 
-  </p>
+    <p><%= f.label :to_airport, "To: " %></p>
+    <p><%= f.select :to_airport, @airport_options, selected: params[:to_airport] %></p> 
 
-  <p> 
-    Passengers: <%= f.select :passengers, options_for_select(@passengers), selected: params[:passengers] %> 
-  </p>
+    <p><%= f.label :passengers, "Passengers: " %></p>
+    <p><%= f.select :passengers, options_for_select(@passengers), selected: params[:passengers] %></p> 
 
   <h3> Available dates: </h3>
   <p><%= f.select :start, options_for_select(@dates, params[:start])  %></p>
