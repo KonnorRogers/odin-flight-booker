@@ -61,21 +61,24 @@
  * @import "utilities/skew-transforms";
  */
 
+.form {
+  @apply flex flex-col w-1/2 m-auto;
+}
+
 .label {
-  @apply .w-1/2;
 }
 
 .select-box {
-  @apply .w-1/2;
 }
 
 .btn {
-  @apply .px-4 .py-2 .shadow .rounded .border-solid;
+  @apply px-4 py-2 shadow-inner rounded border-solid;
 }
 
 .btn-green {
-  @apply .bg-green-200 .border-gray-300;
+  @apply bg-green-200 border-gray-300;
 }
+
 .btn-green:hover {
-  @apply .bg-green-300 .border-black;
+  @apply bg-green-300 border-gray-500;
 }
