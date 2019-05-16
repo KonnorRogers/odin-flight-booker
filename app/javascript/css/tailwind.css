@@ -65,10 +65,16 @@
   @apply flex flex-col w-1/2 m-auto;
 }
 
+.selection {
+  @apply px-4 py-2 rounded border-solid border-gray-200 items-center content-end;
+}
+
 .label {
+  @apply text-right w-1/2 py-2 self-end;
 }
 
 .select-box {
+  @apply appearance-none w-1/2 self-end text-right content-end mx-6 py-2;
 }
 
 .btn {
