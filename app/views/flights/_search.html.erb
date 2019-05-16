@@ -11,7 +11,7 @@
     <%= f.select :passengers, options_for_select(@passengers), selected: params[:passengers], class: "select-box" %>
 
   <h3 class="label"> Available dates: </h3>
-  <%= f.select :start, options_for_select(@dates, params[:start]), class: "select box" %>
+  <%= f.select :start, options_for_select(@dates, params[:start]), class: "select-box" %>
 
   <%= f.submit "Search for flights", class: "btn btn-green" %>
 <% end %>

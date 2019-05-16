@@ -61,26 +61,21 @@
  * @import "utilities/skew-transforms";
  */
 
-.form {
-  @apply .flex .flex-col .flex-auto;
-}
-
 .label {
+  @apply .w-1/2;
 }
 
-.select {
-  @apply .m-0;
+.select-box {
+  @apply .w-1/2;
 }
 
 .btn {
-  @apply .px-4 .py-2 .rounded;
+  @apply .px-4 .py-2 .shadow .rounded .border-solid;
 }
 
 .btn-green {
-  @apply .bg-green-400 .text-white .font-bold .shadow .border-gray-500 .border-solid;
+  @apply .bg-green-200 .border-gray-300;
 }
-
-
 .btn-green:hover {
-  @apply .bg-green-500 .border-gray-700;
+  @apply .bg-green-300 .border-black;
 }
