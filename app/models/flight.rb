@@ -23,18 +23,27 @@ class Flight < ApplicationRecord
 
   def self.date_list
     dates = Flight.dates.in_order
-    dates.map { |d| [d.start] }.uniq
+    dates.map { |d| [formatted_date(d.start)] }.uniq
+  end
+
+  def self.formatted_date(date)
+    return if date.nil?
+
+    date = date.to_date
+    date.strftime("%m/%d/%Y")
+  end
+
+  def self.parse(date)
+    return if date.nil? || date.empty?
+
+    Time.zone.strptime(date.to_s, '%m/%d/%y')
   end
 
   def self.beginning(date)
-    return if date.nil?
-
-    Date.parse(date).beginning_of_day
+    parse(date).beginning_of_day unless date.nil? || date.blank?
   end
 
   def self.ending(date)
-    return if date.nil?
-
-    Date.parse(date).end_of_day
+    parse(date).end_of_day unless date.nil? || date.blank?
   end
 end

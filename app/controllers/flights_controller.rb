@@ -9,7 +9,7 @@ class FlightsController < ApplicationController
     @dates = Flight.date_list
     @flights = Flight.available(params[:to_airport],
                                 params[:from_airport],
-                                params[:start]).in_order
+                                params[:start])
   end
 
   private
