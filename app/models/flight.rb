@@ -18,7 +18,10 @@ class Flight < ApplicationRecord
                                       ending: ending(start) }])
                     }
 
-  scope :dates, -> { Flight.where('start > ?', Time.zone.now) }
+  scope :dates, lambda { |date = Time.zone.now|
+                  Flight.where('start >= ?',
+                               date.beginning_of_day)
+                }
   scope :in_order, -> { Flight.all.order(start: :asc) }
 
   def self.date_list
@@ -30,7 +33,7 @@ class Flight < ApplicationRecord
     return if date.nil?
 
     date = date.to_date
-    date.strftime("%m/%d/%Y")
+    date.strftime('%m/%d/%Y')
   end
 
   def self.parse(date)
