@@ -39,7 +39,7 @@ class Flight < ApplicationRecord
   def self.parse(date)
     return if date.nil? || date.empty?
 
-    Date.strptime(date.to_s, '%m/%d/%y')
+    Date.strptime(date.to_s, '%m/%d/%Y')
   end
 
   def self.beginning(date)
