@@ -33,6 +33,9 @@ class FlightSearchTest < ActionDispatch::IntegrationTest
                    begin: Flight.beginning(start),
                    ending: Flight.ending(start))
 
+    p Time.zone.now
+    p Flight.beginning(start)
+    p Flight.ending(start)
 
     to = @now.to_airport.id
     from = @now.from_airport.id
