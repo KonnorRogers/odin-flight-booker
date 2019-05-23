@@ -7,13 +7,13 @@ one:
   from_airport: nyc
 
 two:
-  start: <%= 2.hours.ago %>
+  start: <%= 1.day.ago %>
   duration: 150
   to_airport: nyc
   from_airport: sfo
 
 three:
-  start: <%= 3.hours.since %>
+  start: <%= 1.days.since %>
   duration: 90
   to_airport: nyc
   from_airport: sfo

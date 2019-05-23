@@ -7,6 +7,9 @@ class Flight < ApplicationRecord
   validates :from_airport, presence: true
   validates :to_airport, presence: true
 
+  attr_reader :date_str_format
+  @date_str_format = "%m/%d/%Y"
+
   scope :available, lambda { |to, from, start|
                       Flight.where(["to_airport_id = :to and
                                     from_airport_id = :from and
@@ -33,20 +36,29 @@ class Flight < ApplicationRecord
     return if date.nil?
 
     date = date.to_date
-    date.strftime('%m/%d/%Y')
+    date.strftime(@date_str_format)
   end
 
+  # @param date [String] Date formatted in %m/%d/%y format
   def self.parse(date)
-    return if date.nil? || date.empty?
-
-    Date.strptime(date.to_s, '%m/%d/%Y')
+    Date.strptime(date.to_s, @date_str_format)
+  rescue
+      puts "Invalid date provided"
   end
 
   def self.beginning(date)
-    parse(date).beginning_of_day unless date.nil? || date.blank?
+    date = parse(date)
+
+    return if date.nil?
+
+    date.beginning_of_day
   end
 
   def self.ending(date)
-    parse(date).end_of_day unless date.nil? || date.blank?
+    date = parse(date)
+
+    return if date.nil?
+
+    date.end_of_day
   end
 end
