@@ -47,7 +47,6 @@ class Flight < ApplicationRecord
       puts "Invalid date provided"
   end
 
-
   def self.beginning(date)
     date = parse(date)
 
@@ -63,5 +62,4 @@ class Flight < ApplicationRecord
 
     date.end_of_day
   end
-
 end
