@@ -61,4 +61,5 @@ class Flight < ApplicationRecord
 
     date.end_of_day
   end
+
 end
