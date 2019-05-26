@@ -1,0 +1,2 @@
+module BookingsControllerHelper
+end
