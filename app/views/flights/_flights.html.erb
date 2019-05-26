@@ -4,7 +4,7 @@
 <% else %>
 
   <%= form_with(method: :get, local: true, class: "flex flex-col") do |f| %>
-    <%= f.hidden_field :num_tickets, value: params[:passengers] %>
+    <%= f.hidden_field :num_passengers, value: params[:passengers] %>
 
     <% @flights.each do |flight| %>
       <div class="flex flex-row px-4 py-2 justify-center w-auto">
