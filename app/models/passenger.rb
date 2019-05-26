@@ -1,5 +1,5 @@
 class Passenger < ApplicationRecord
-  has_many :bookings
+  belongs_to :bookings
   # uses a through model because the booking contains the info
   # for the flight
   has_many :flights, through: :bookings
