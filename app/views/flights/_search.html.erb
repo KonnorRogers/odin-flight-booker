@@ -13,7 +13,8 @@
 
   <div class="selection">
     <%= f.label :passengers, "Passengers: ", class: "label" %>
-    <%= f.select :passengers, options_for_select(@passengers),{ selected: params[:passengers] }, { class: "select-box" } %>
+    <%= f.select :passengers, @passengers, { selected: params[:passengers] }, { class: "select-box" } %>
+    <%= f.hidden_field :num_tickets, value: params[:passengers] %>
   </div>
 
   <div class="selection">

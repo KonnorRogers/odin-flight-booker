@@ -10,6 +10,7 @@ class FlightsController < ApplicationController
     @flights = Flight.available(params[:to_airport],
                                 params[:from_airport],
                                 params[:start])
+
   end
 
   private

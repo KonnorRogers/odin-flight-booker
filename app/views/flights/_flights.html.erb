@@ -2,12 +2,12 @@
   <p class="font-bold text-lg">No flights found, please search again</p>
 <% else %>
   <% @flights.each do |flight| %>
-    <ul class="list-none list-inside">
-      <li>From: <%= flight.from_airport.name %></li>
-      <li>To: <%= flight.to_airport.name %></li>
-      <li>Date: <%= flight.start.strftime('%m/%d/%Y') %></li>
-      <li>Time: <%= flight.start.strftime('%H%M') %></li>
-      <li>Duration: <%= flight.duration %>minutes</li>
+    <ul class="flex flex-row justify-center px-4 py-2 list-none list-inside m-auto w-2/3">
+      <li class='px-2 py-2 border-r-0 border-solid border-gray-500'>From: <%= flight.from_airport.name %></li>
+      <li class='px-2 py-2 border-r-0 border-solid border-gray-500'>To: <%= flight.to_airport.name %></li>
+      <li class='px-2 py-2 border-r-0 border-solid border-gray-500'>Date: <%= flight.start.strftime('%m/%d/%Y') %></li>
+      <li class='px-2 py-2 border-r-0 border-solid border-gray-500'>Time: <%= flight.start.strftime('%H%M') %></li>
+      <li class='px-2 py-2 border-solid border-gray-500 w-1/4'>Duration: <%= flight.duration %>minutes</li>
     </ul>
   <% end %>
 <% end %>

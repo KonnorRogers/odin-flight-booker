@@ -29,6 +29,9 @@ Flight.create(start: 1.year.since, duration: 80,
 Flight.create(start: 3.years.since, duration: 90,
               to_airport_id: nyc.id, from_airport_id: sfo.id)
 
+Flight.create(start: 3.years.since, duration: 180,
+              to_airport_id: nyc.id, from_airport_id: sfo.id)
+
 Flight.create(start: 1.year.ago, duration: 190,
               to_airport_id: nyc.id, from_airport_id: sfo.id)
 

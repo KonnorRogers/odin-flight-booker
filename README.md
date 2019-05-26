@@ -42,3 +42,7 @@ rails test
 ```bash
 git push heroku [branch]
 ```
+
+## Fun little extra items
+
+Tailwind CSS / Webpacker are integrated in this project
