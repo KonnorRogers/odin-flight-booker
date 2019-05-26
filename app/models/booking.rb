@@ -1,4 +1,4 @@
 class Booking < ApplicationRecord
-  has_many :passengers
-  has_one :flight
+  belongs_to :passenger
+  belongs_to :flight
 end

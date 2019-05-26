@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class Flight < ApplicationRecord
-  belongs_to :booking
   belongs_to :from_airport, class_name: 'Airport'
   belongs_to :to_airport, class_name: 'Airport'
+  has_many :bookings
 
   validates :from_airport, presence: true
   validates :to_airport, presence: true
