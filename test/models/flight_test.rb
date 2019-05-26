@@ -54,9 +54,6 @@ class FlightTest < ActiveSupport::TestCase
   test 'should parse dates in %m/%d/%y format properly' do
     date = Flight.formatted_date(Time.zone.now)
 
-    p Flight.parse(date).beginning_of_day.class # => ActiveSupport::TimeWithZone
-    p Flight.parse(date).class # => Date
-
     assert_nil Flight.parse(nil)
     assert_nil Flight.parse('invalid date')
   end

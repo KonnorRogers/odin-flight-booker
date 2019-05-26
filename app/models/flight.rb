@@ -43,8 +43,8 @@ class Flight < ApplicationRecord
   # @return [nil, ActiveSupport::TimeWithZone
   def self.parse(date)
     Date.strptime(date.to_s, @date_str_format)
-  rescue
-      puts "Invalid date provided"
+  rescue ArgumentError
+    nil
   end
 
   def self.beginning(date)
