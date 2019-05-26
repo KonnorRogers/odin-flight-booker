@@ -1,4 +1,4 @@
-app/models/flight.rb 6c95228c0e3f4a0c75e9d47b676e126c65f6618d
+app/models/flight.rb 5cc4401bbeb40920592bd586a3b2291ef8b365bb
 app/models/airport.rb c97e97f9cfa7f76dec3818c780eebea6a0c82547
 app/jobs/application_job.rb 9a24c3e30cfb517943d8774df4695ba794bfd69d
 app/helpers/flights_helper.rb d882df8118d72940868df642c9ac76671d9e747f
