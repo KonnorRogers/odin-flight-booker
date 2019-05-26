@@ -2,4 +2,6 @@
 <p>Please choose your flight</p>
 <%= render 'search' %>
 
-<%= render 'flights' %>
+<% unless current_page?(root_url) %>
+  <%= render 'flights' %>
+<% end %>

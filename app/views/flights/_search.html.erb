@@ -14,7 +14,6 @@
   <div class="selection">
     <%= f.label :passengers, "Passengers: ", class: "label" %>
     <%= f.select :passengers, @passengers, { selected: params[:passengers] }, { class: "select-box" } %>
-    <%= f.hidden_field :num_tickets, value: params[:passengers] %>
   </div>
 
   <div class="selection">
@@ -22,5 +21,5 @@
     <%= f.select :start, options_for_select(@dates, params[:start]), { include_blank: true }, { class: "select-box" } %>
   </div>
 
-  <%= f.submit "Search for flights", class: "btn btn-green" %>
+  <%= f.submit "Search", class: "btn btn-green" %>
 <% end %>
