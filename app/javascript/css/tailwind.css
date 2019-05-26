@@ -61,6 +61,12 @@
  * @import "utilities/skew-transforms";
  */
 
+/* .appear-none { */
+/*   -moz-appearance: none; */
+/*   -webkit-appearance: none; */
+/*   appearance: none; */
+/* } */
+
 .form {
   @apply flex flex-col w-1/2 m-auto justify-center;
 }
