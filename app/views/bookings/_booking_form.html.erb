@@ -1,10 +1,10 @@
 <%= form_with(model: @booking, local: true, class: "form") do |f| %>
   <%= f.hidden_field :flight_id, value: @booking.flight_id %>
 
+  <% count = 1  %>
   <%= f.fields_for :passengers do |p_field| %>
 
-    <% @count = 1 %>
-    <p class="mx-auto font-bold"> Passenger <%= "#{@count}" %> </p>
+    <p class="mx-auto font-bold"> <%= "Passenger #{count}" %> </p>
 
     <div class="selection">
       <%= p_field.label :name, class: "label" %>:
@@ -15,7 +15,8 @@
       <%= p_field.label :email, class: "label" %>:
       <%= p_field.email_field :email, class: "text-field" %>
     </div>
-    <% @count += 1 %>
+
+    <% count += 1 %>
 
   <% end %>
 

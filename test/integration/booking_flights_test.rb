@@ -7,6 +7,7 @@ class BookingFlightsTest < ActionDispatch::IntegrationTest
     @flight = flights(:one)
     @booking = bookings(:one)
     @konnor = passengers(:konnor)
+    @ryan = passengers(:ryan)
   end
 
   test 'should create a booking object with 2 passengers' do
@@ -31,7 +32,20 @@ class BookingFlightsTest < ActionDispatch::IntegrationTest
     assert_difference 'Booking.count', 1 do
       post bookings_path(@booking), params: {
         booking: {
-          passenger: @konnor
+          flight_id: @flight.id,
+          passengers_attributes: {
+            '0' => {
+              passenger_id: @ryan.id,
+              name: @ryan.name,
+              email: @ryan.email
+            },
+
+            '1' => {
+              passenger_id: @konnor.id,
+              name: @konnor.name,
+              email: @konnor.email
+            }
+          }
         }
       }
     end
