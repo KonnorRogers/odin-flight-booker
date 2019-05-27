@@ -33,7 +33,6 @@ rails db:seed
 ## How to run the test suite
 ```bash
 rails db:migrate
-rails db:seed
 rails test
 ```
 
