@@ -5,7 +5,6 @@ class BookingFlightsTest < ActionDispatch::IntegrationTest
     @sfo = airports(:sfo)
     @nyc = airports(:nyc)
     @flight = flights(:one)
-    @booking = bookings(:one)
     @konnor = passengers(:konnor)
     @ryan = passengers(:ryan)
   end
@@ -23,14 +22,14 @@ class BookingFlightsTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     get new_booking_url, params: {
-      num_passengers: 1,
+      num_passengers: 2,
       flight: @flight.id
     }
 
     assert_response :success
 
     assert_difference 'Booking.count', 1 do
-      post bookings_path(@booking), params: {
+      post bookings_path, params: {
         booking: {
           flight_id: @flight.id,
           passengers_attributes: {
@@ -48,6 +47,8 @@ class BookingFlightsTest < ActionDispatch::IntegrationTest
           }
         }
       }
+
+      assert_equal Booking.last.flight.passengers.count, 2
     end
   end
 end
