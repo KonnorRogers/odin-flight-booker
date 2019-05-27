@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 gem 'pry'
 gem 'pry-rails'
-gem 'webpacker', '~> 3.5'
+gem 'webpacker', '~> 4.0'
 gem 'tailwindcss', '~> 0.2.0'
 
 # Use CoffeeScript for .coffee assets and views
