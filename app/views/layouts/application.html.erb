@@ -11,6 +11,8 @@
         <%= content_tag(:div, message, class: "alert alert-#{message_type} font-bold capitalize text-red-500") %>
       <% end %>
 
+      <%= link_to "Home", root_url %>
+
       <%= yield %>
     </div>
 

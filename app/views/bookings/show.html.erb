@@ -1,2 +1,19 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<p class="font-bold text-2xl"> Flight info: </p>
+
+<ul class="flex flex-col w-1/2 text-center m-auto justify-center list-none list-inside">
+  <li class="py-2 text-left w-1/2 m-auto">From: <%= @flight.from_airport.name %> </li>
+  <li class="py-2 text-left w-1/2 m-auto">To: <%= @flight.to_airport.name %></li> 
+  <li class="py-2 text-left w-1/2 m-auto">Date: <%= @flight.start.strftime('%m/%d/%Y') %></li>
+  <li class="py-2 text-left w-1/2 m-auto">Time: <%= @flight.start.strftime('%H%M') %></li>
+  <li class="py-2 text-left w-1/2 m-auto">Duration: <%= @flight.duration %>minutes</li>
+</ul>
+
+<p class="font-bold text-2xl">Ticket Holders:</p>
+<% @booking.passengers.each do |pass| %>
+  <ul class="flex flex-col w-1/2 text-center m-auto justify-center list-none list-inside">
+    <li class="text-left w-1/2 m-auto py-2">Name: <%= pass.name %></li>
+    <li class="text-left w-1/2 m-auto py-2">Email: <%= pass.email %></li>
+  </ul>
+<% end %>
+
+
