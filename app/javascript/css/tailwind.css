@@ -61,18 +61,16 @@
  * @import "utilities/skew-transforms";
  */
 
-/* .appear-none { */
-/*   -moz-appearance: none; */
-/*   -webkit-appearance: none; */
-/*   appearance: none; */
-/* } */
+.flight-list {
+  @apply flex flex-row px-2 mx-auto w-1/2;
+}
 
 .form {
   @apply flex flex-col w-1/2 m-auto justify-center;
 }
 
 .selection {
-  @apply flex px-4 py-2 shadow-inner border-solid border-gray-100 items-center relative overflow-visible;
+  @apply flex px-4 py-2 shadow-inner border-solid border-gray-200 items-center relative overflow-visible;
 }
 
 .label {
@@ -97,4 +95,8 @@
 
 .btn-green:hover {
   @apply bg-green-300 border-gray-500;
+}
+
+.text-field {
+  @apply px-2 ml-4 mr-auto rounded-lg border-solid border-gray-500;
 }

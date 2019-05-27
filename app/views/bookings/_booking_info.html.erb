@@ -1,0 +1,21 @@
+<ul class="flex flex-col justify-center mt-30 list-none list-inside">
+  <li class="flight-list">
+    <p class="text-right px-2 w-1/2"> Date of Departure: </p>
+    <p class="text-left px-2 w-1/2"><%= Flight.formatted_date(@flight.start) %></p>
+  </li>
+
+  <li class="flight-list">
+    <p class="text-right px-2 w-1/2">Time of Departure:</p>
+    <p class="text-left px-2 w-1/2"><%= @flight.start.strftime("%H%M") %></p>
+  </li>
+
+  <li class="flight-list">
+    <p class="text-right px-2 w-1/2">Departing Airport:</p>
+    <p class="text-left px-2 w-1/2"><%= @flight.from_airport.name %></p>
+  </li>
+
+  <li class="flight-list">
+    <p class="text-right px-2 w-1/2">Arriving Airport:</p>
+    <p class="text-left px-2 w-1/2"><%= @flight.to_airport.name %></p>
+  </li>
+</ul>

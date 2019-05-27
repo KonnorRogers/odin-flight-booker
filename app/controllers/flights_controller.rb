@@ -10,12 +10,12 @@ class FlightsController < ApplicationController
     @flights = Flight.available(params[:to_airport],
                                 params[:from_airport],
                                 params[:start])
-
   end
 
   private
 
   def flight_params
-    params.require(:flight).permit(:to_airport, :from_airport, :passengers, :start)
+    params.require(:flight).permit(:to_airport, :from_airport,
+                                   :passengers, :start, :id)
   end
 end

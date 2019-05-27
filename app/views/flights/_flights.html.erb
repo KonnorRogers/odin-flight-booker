@@ -3,7 +3,7 @@
 
 <% else %>
 
-  <%= form_with(method: :get, local: true, class: "flex flex-col") do |f| %>
+  <%= form_with(url: new_booking_url, method: :get, local: true, class: "flex flex-col") do |f| %>
     <%= f.hidden_field :num_passengers, value: params[:passengers] %>
 
     <% @flights.each do |flight| %>

@@ -1,19 +1,8 @@
 require 'test_helper'
 
 class BookingsControllerTest < ActionDispatch::IntegrationTest
-  test "should get new" do
-    get bookings_new_url
-    assert_response :success
+  test "should get redirect to root_url" do
+    get new_booking_path
+    assert_response :redirect
   end
-
-  test "should get create" do
-    get bookings_create_url
-    assert_response :success
-  end
-
-  test "should get show" do
-    get bookings_show_url
-    assert_response :success
-  end
-
 end
