@@ -3,7 +3,8 @@
 
   <%= f.fields_for :passengers do |p_field| %>
 
-    <p class="mx-auto font-bold"> Passenger </p>
+    <% @count = 1 %>
+    <p class="mx-auto font-bold"> Passenger <%= "#{@count}" %> </p>
 
     <div class="selection">
       <%= p_field.label :name, class: "label" %>:
@@ -14,6 +15,8 @@
       <%= p_field.label :email, class: "label" %>:
       <%= p_field.email_field :email, class: "text-field" %>
     </div>
+    <% @count += 1 %>
+
   <% end %>
 
   <%= f.submit "Purchase tickets", class: "btn btn-green" %>
