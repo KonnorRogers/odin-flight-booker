@@ -2,25 +2,21 @@
 
 class BookingsController < ApplicationController
   def new
-    @flight = Flight.find_by(id: params[:flight])
-
-    unless @flight
-      flash[:danger] = 'No flight found'
-      redirect_to root_url
-      return
-    end
+    @booking ||= Flight.find_by(id: params[:flight]).bookings.build
 
     @num_passengers = params[:num_passengers]
-    @booking = @flight.bookings.build
 
-    @passengers = @num_passengers.to_i.times.map { @booking.passengers.build }
+    @num_passengers.to_i.times { @booking.passengers.build }
   end
 
   def create
     @booking = Booking.new(booking_params)
     if @booking.save
-      redirect_to @booking
+      flash[:info] = 'booking confirmed'
+      redirect_to booking_path(@booking)
     else
+      flash[:error] = 'Uh oh, something went wrong!'
+      flash[:info] = "#{@booking.errors.full_messages}"
       render 'new'
     end
   end
@@ -32,6 +28,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(passenger_attributes: %i[id name email])
+    params.require(:booking).permit(:flight_id, passengers_attributes: %i[id name email])
   end
 end

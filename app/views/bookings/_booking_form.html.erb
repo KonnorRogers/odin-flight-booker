@@ -1,20 +1,19 @@
 <%= form_with(model: @booking, local: true, class: "form") do |f| %>
-  
-  <% @passengers.each_with_index do |passenger, index| %>
-    <%= f.fields :passenger do |p_field| %>
+  <%= f.hidden_field :flight_id, value: @booking.flight_id %>
 
-        <p class="mx-auto font-bold"> Passenger <%= index + 1 %> </p>
+  <%= f.fields_for :passengers do |p_field| %>
 
-      <div class="selection">
-        <%= p_field.label :name, class: "label" %>:
-        <%= p_field.text_field :name, class: "text-field" %>
-      </div>
+    <p class="mx-auto font-bold"> Passenger </p>
 
-      <div class="selection">
-        <%= p_field.label :email, class: "label" %>:
-        <%= p_field.email_field :email, class: "text-field" %>
-      </div>
-    <% end %>
+    <div class="selection">
+      <%= p_field.label :name, class: "label" %>:
+      <%= p_field.text_field :name, class: "text-field" %>
+    </div>
+
+    <div class="selection">
+      <%= p_field.label :email, class: "label" %>:
+      <%= p_field.email_field :email, class: "text-field" %>
+    </div>
   <% end %>
 
   <%= f.submit "Purchase tickets", class: "btn btn-green" %>

@@ -1,2 +1,4 @@
-<%= render 'booking_info' %>
+<% unless @booking.flight.nil? %>
+  <%= render 'booking_info' %>
+<% end %>
 <%= render 'booking_form' %>
