@@ -8,6 +8,8 @@ This is merely a sample app to show how nested attributes would work
 [The Odin Project flight
 booker link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms?ref=lnav#assignment)
 
+[Deployed application](https://paramagic-flight-booker.herokuapp.com/)
+
 ## Ruby version
 
 - Ruby 2.6.2
