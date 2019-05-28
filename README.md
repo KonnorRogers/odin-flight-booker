@@ -16,7 +16,10 @@ booker link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/buildi
 
 - Ruby 2.6.2
 - Rails 5.2.3
-- Sqlite3
+- Webpack
+- TailwindCSS
+- Sqlite3 as a local DB
+- PostgreSQL as production DB
 
 ## Getting Started
 
