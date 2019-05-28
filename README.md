@@ -45,7 +45,7 @@ rails server
 
 Now you can view your app in localhost:3000
 
-### Deployment to heroku
+#### Deployment to heroku
 
 ```bash
 heroku create
