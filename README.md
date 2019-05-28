@@ -20,26 +20,36 @@ booker link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/buildi
 
 ## Getting Started
 
-### Local development
+### Initial setup
 
 ```bash
 git clone https://github.com/ParamagicDev/odin-flight-booker.git
 cd odin-flight-booker
-bundle install
+bundle install --without-production
 yarn install
+```
+
+#### Local development
+
+```bash
 rails db:migrate
 rails db:seed
+```
+
+In seperate terminals run the following:
+
+```bash
+./bin/webpack-dev-server
 rails server
 ```
+
+Now you can view your app in localhost:3000
 
 ### Deployment to heroku
 
 ```bash
-https://github.com/ParamagicDev/odin-flight-booker.git
-cd odin-flight-booker
-bundle install
-yarn install
 heroku create
+
 git push heroku master
 heroku run rails db:migrate
 heroku run rails db:seed
