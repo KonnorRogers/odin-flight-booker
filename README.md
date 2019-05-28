@@ -18,28 +18,46 @@ booker link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/buildi
 - Rails 5.2.3
 - Sqlite3
 
+## Getting Started
+
+### Local development
+
+```bash
+git clone https://github.com/ParamagicDev/odin-flight-booker.git
+cd odin-flight-booker
+bundle install
+yarn install
+rails db:migrate
+rails db:seed
+rails server
+```
+
+### Deployment to heroku
+
+```bash
+https://github.com/ParamagicDev/odin-flight-booker.git
+cd odin-flight-booker
+bundle install
+yarn install
+heroku create
+git push heroku master
+heroku run rails db:migrate
+heroku run rails db:seed
+heroku open
+```
+
 ## Database creation
 
 ```bash
 rails db:migrate
-```
-
-## Database initialization
-
-```bash
 rails db:seed
 ```
 
 ## How to run the test suite
 ```bash
+bundle install
 rails db:migrate
 rails test
-```
-
-## Deployment instructions
-
-```bash
-git push heroku [branch]
 ```
 
 ## Fun little extra items
