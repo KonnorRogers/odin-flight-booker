@@ -49,7 +49,9 @@ Now you can view your app in localhost:3000
 
 ```bash
 heroku create
-
+heroku buildpacks:clear
+heroku buildpacks:add heroku/nodejs --index 1
+heroku buildpacks:add heroku/ruby --index 2
 git push heroku master
 heroku run rails db:migrate
 heroku run rails db:seed
