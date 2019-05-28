@@ -2589,10 +2589,10 @@ fs-extra@^0.30.0:
     path-is-absolute "^1.0.0"
     rimraf "^2.2.8"
 
-fs-extra@^8.0.0:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.0.1.tgz#90294081f978b1f182f347a440a209154344285b"
-  integrity sha512-W+XLrggcDzlle47X/XnS7FXrXu9sDo+Ze9zpndeBxdgv88FHLm1HtmkhEwavruS6koanBjp098rUpHs65EmG7A==
+fs-extra@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
+  integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^4.0.0"
@@ -6297,14 +6297,14 @@ svgo@^0.7.0:
     whet.extend "~0.9.9"
 
 tailwindcss@^1.0.0-beta.10:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.0.2.tgz#1df9caf88e0b194a5debf3c3b3aa6b64ea92c9a8"
-  integrity sha512-zqrWxJo3UlXDSa6KA3v0D9FIMCR8ZtVRxTu68+mwqVwazzxVlXM5Y0j1TM3hjGeScfPpOeV06k7Vs9eY7+eoPA==
+  version "1.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.0.0-beta.10.tgz#9e86e23f9742c90be72de1592c2f988942746b8c"
+  integrity sha512-TH8UCo7KYyGHpuWL0tNoD859ljSthG1a5Jf7hbHY6EXLn4pMN82xFyYM9rVNJiaMnFSSJy9fSVcEWJZAo/in/Q==
   dependencies:
     autoprefixer "^9.4.5"
     bytes "^3.0.0"
     chalk "^2.4.1"
-    fs-extra "^8.0.0"
+    fs-extra "^7.0.1"
     lodash "^4.17.11"
     node-emoji "^1.8.1"
     normalize.css "^8.0.1"
