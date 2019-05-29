@@ -18,6 +18,7 @@ booker link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/buildi
 
 - Ruby 2.6.2
 - Rails 5.2.3
+- Yarn 1.0+
 - Webpack
 - TailwindCSS
 - Sqlite3 as a local DB
@@ -32,6 +33,15 @@ git clone https://github.com/ParamagicDev/odin-flight-booker.git
 cd odin-flight-booker
 bundle install --without-production
 yarn install
+```
+
+Alternatively you can run
+
+```bash
+git clone https://github.com/ParamagicDev/odin-flight-booker.git
+cd odin-flight-booker
+bundle install --without-production
+bundle exec rails webpacker:install
 ```
 
 #### Local development
@@ -62,6 +72,14 @@ heroku run rails db:migrate
 heroku run rails db:seed
 heroku open
 ```
+
+The above will automatically run
+
+```bash
+bundle exec rails webpacker:compile
+```
+
+In production so you won't have to specify the command.
 
 ## Database creation
 
