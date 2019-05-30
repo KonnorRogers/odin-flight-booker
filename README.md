@@ -35,15 +35,6 @@ bundle install --without-production
 yarn install
 ```
 
-Alternatively you can run
-
-```bash
-git clone https://github.com/ParamagicDev/odin-flight-booker.git
-cd odin-flight-booker
-bundle install --without-production
-bundle exec rails webpacker:install
-```
-
 #### Local development
 
 ```bash
