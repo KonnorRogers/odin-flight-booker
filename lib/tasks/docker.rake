@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 namespace :docker do
-  desc 'docker-compose build [args]'
-  task :build do |_t, args|
-    sh("docker-compose build #{args}")
+  desc 'docker-compose build'
+  task :build do
+    sh("docker-compose build")
   end
 
-  desc 'docker-compose up [args]'
-  task :start do |_t, args|
-    sh("docker-compose up #{args}")
+  desc 'docker-compose up'
+  task :start do
+    sh("docker-compose up")
   end
 
   desc 'docker-compose -f docker-compose.test.yml run --rm web'
