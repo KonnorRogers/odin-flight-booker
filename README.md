@@ -46,3 +46,25 @@ git push heroku [branch]
 ## Fun little extra items
 
 Tailwind CSS / Webpacker are integrated in this project
+
+## Docker integration
+
+I have included docker support in this repo.
+
+```bash
+# builds the image
+docker-compose build 
+
+# runs the test suite
+docker-compose -f docker-compose.test.yml run --rm web
+
+# exposes the container on localhost:3000
+docker-compose up
+```
+
+Optionally, I have created rake tasks for easily running these commands
+```bash
+rails docker:build # builds the image
+rails docker:test # tests the container
+rails docker:start # allows you the access the server at localhost:3000
+```
