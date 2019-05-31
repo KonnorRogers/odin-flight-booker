@@ -111,3 +111,17 @@ rails docker:build # builds the image
 rails docker:test # tests the container
 rails docker:start # allows you the access the server at localhost:3000
 ```
+
+To run commands on the container you can either run:
+
+```bash
+# This will give you a shell in the container
+docker-compose exec web /bin/sh
+```
+
+Or you can run:
+
+```bash
+docker-compose exec web /bin/rails db:migrate
+docker-compose exec web <command>
+```
