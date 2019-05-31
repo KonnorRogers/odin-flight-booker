@@ -10,7 +10,9 @@ services:
     build: .
     environment:
       RAILS_ENV: development
-    command: bash -c "./bin/webpack-dev-server & bundle exec rails server -p 3000 -b '0.0.0.0'"
+      command: bash -c "rm -f /myapp/tmp/pids/server.pid && \
+                        ./bin/webpack-dev-server & \
+                        bundle exec rails server -p 3000 -b '0.0.0.0'"
 
     volumes:
       - .:/myapp
