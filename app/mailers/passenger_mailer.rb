@@ -1,9 +1,16 @@
-class PassengerMailer < ApplicationMailer
-  default from: 'konnor@example.com'
+# frozen_string_literal: true
 
-  def thank_you_email
-    # @user = params[:user]
-    # @url = 'http://example.com'
-    # mail(to: @user.email, subject: "Thank you for purchasing your ticket")
+class PassengerMailer < ApplicationMailer
+  default from: 'flights@paramagicflights.com'
+
+  def thank_you_emails
+    @booking = params[:booking]
+    @url = booking_url(@booking)
+
+    @booking.passengers.each do |passenger|
+      @passenger = passenger
+      mail(to: @passenger.email,
+           subject: 'Thank you for booking your flight')
+    end
   end
 end

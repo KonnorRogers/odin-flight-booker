@@ -12,11 +12,14 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     if @booking.save
-      flash[:info] = 'booking confirmed'
+      # Here is where emails should be sent
+      PassengerMailer.with(booking: @booking).thank_you_emails.deliver_later
+
+      flash[:info] = 'booking confirmed, check your emails for confirmation'
       redirect_to booking_path(@booking)
     else
       flash[:error] = 'Uh oh, something went wrong!'
-      flash[:info] = "#{@booking.errors.full_messages}"
+      flash[:info] = @booking.errors.full_messages.to_s
       render 'new'
     end
   end
@@ -29,6 +32,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:flight_id, passengers_attributes: %i[id name email])
+    params.require(:booking).permit(:flight_id,
+                                    passengers_attributes: %i[id name email])
   end
 end
