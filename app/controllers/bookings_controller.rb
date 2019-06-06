@@ -2,7 +2,7 @@
 
 class BookingsController < ApplicationController
   def new
-    @booking ||= Flight.find_by(id: params[:flight]).bookings.build
+    @booking = Flight.find_by(id: params[:flight]).bookings.build
 
     @num_passengers = params[:num_passengers]
 
@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     if @booking.save
       # Here is where emails should be sent
-      PassengerMailer.with(booking: @booking).thank_you_emails.deliver_later
+      PassengerMailer.with(booking: @booking).thank_you_email.deliver_later
 
       flash[:info] = 'booking confirmed, check your emails for confirmation'
       redirect_to booking_path(@booking)

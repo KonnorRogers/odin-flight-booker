@@ -3,7 +3,7 @@
 class PassengerMailer < ApplicationMailer
   default from: 'flights@paramagicflights.com'
 
-  def thank_you_emails
+  def thank_you_email
     @booking = params[:booking]
     @url = booking_url(@booking)
 
