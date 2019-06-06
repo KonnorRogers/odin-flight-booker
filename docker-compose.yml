@@ -12,12 +12,7 @@ services:
       RAILS_ENV: development
       # Due to some issues with yarn, just run the yarn install here
       command: bash -c "rm -f /myapp/tmp/pids/server.pid && \
-<<<<<<< HEAD
-                        bin/yarn install &&
-=======
-                        bundle exec rails db:migrate && \
-                        bundle exec rails db:seed && \
->>>>>>> master
+                        bin/yarn install && \
                         ./bin/webpack-dev-server & \
                         bundle exec rails server -p 3000 -b '0.0.0.0'"
 
