@@ -11,7 +11,7 @@ booker link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/buildi
 
 [Deployed application - without emailer](https://paramagic-flight-booker.herokuapp.com/)
 
-![Application running in local environment](https://gfycat.com/mealyfavoritedormouse)
+![Application running in local environment](https://thumbs.gfycat.com/MealyFavoriteDormouse-size_restricted.gif)
 
 ## Ruby version
 
