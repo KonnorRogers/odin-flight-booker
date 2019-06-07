@@ -8,7 +8,10 @@ This is merely a sample app to show how nested attributes would work
 [The Odin Project flight
 booker link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/building-advanced-forms?ref=lnav#assignment)
 
-[Deployed application](https://paramagic-flight-booker.herokuapp.com/)
+
+[Deployed application - without emailer](https://paramagic-flight-booker.herokuapp.com/)
+
+![Application running in local environment](https://gfycat.com/mealyfavoritedormouse)
 
 ## Ruby version
 
@@ -38,14 +41,12 @@ yarn install
 #### Local development
 
 ```bash
+rails db:create
 rails db:migrate
 rails db:seed
 ```
 
-In seperate terminals run the following:
-
 ```bash
-./bin/webpack-dev-server
 rails server
 ```
 
@@ -75,6 +76,7 @@ In production so you won't have to specify the command.
 ## Database creation
 
 ```bash
+rails db:create
 rails db:migrate
 rails db:seed
 ```
